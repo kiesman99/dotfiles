@@ -3,7 +3,7 @@ set encoding=utf-8 " Enable UTF-8 Encoding for this file
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 
 
 " Plug 'vim-airline/vim-airline'
