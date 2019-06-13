@@ -17,10 +17,6 @@ Plug 'tpope/vim-surround' " Extensive Plugin to add and edit surroundings
 
 Plug 'tpope/vim-fugitive' " A git wrapper
 
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " A Language Server processor
-
-Plug 'yatli/coc-powershell', {'do': { -> coc#powershell#install()} }
-
 Plug 'itchyny/lightline.vim' " Status Bar
 
 " Plugin for docker syntax highlighting
@@ -52,12 +48,3 @@ set guioptions-=e  " Don't use GUI tabline
 syntax enable " Enable Syntax Highlighting
 set showcmd " always show command prompt
 set number " show absolute line numbers
-
-" Enable auto close of bracktes etc
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
