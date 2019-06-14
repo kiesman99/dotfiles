@@ -98,3 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set aliases for windows software if executed on windows WSL
+set -e
+if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
+	# is windows wsl
+	alias docker=docker.exe
+fi
