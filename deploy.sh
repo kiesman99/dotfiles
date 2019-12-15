@@ -1,31 +1,61 @@
-#!/bin/bash
-# This script creates syslinks for all dotfiles
-# Resource:  http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
+
+# -----------------------------
+function hr {
+    #echo "\n\n"
+    #echo "-----------------";
+    #echo "\n\n";
+    echo ""
+}
+# -----------------------------
 
 
-########## Variables
+## variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-# files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-files="zshrc oh-my-zsh vim vimrc"
+## collect dotfiles, that neet to be saved here
+files="zshrc vim vimrc antigenrc";
+##
 
-##########
+dir=~/dotfiles
+backuptDir=~/dotfiles_old
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+echo "deploy.sh";
+hr
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
+echo "Following files will be deployed:\n"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# print all files
 for file in $files; do
-echo "Moving any existing dotfiles from ~ to $olddir"
+echo $file;
+done
+hr
+
+echo "Making Backup of old dotfiles in $backupDir"
+mkdir -p $backuptDir
+for file in $files; do
 mv ~/.$file ~/dotfiles_old/
-echo "Creating symlink to $file in home directory."
+done
+echo "...done"
+
+hr
+
+echo "Make Symbolic from $dir to '~'"
+
+for file in $files; do
 ln -s $dir/$file ~/.$file
 done
+echo "...done"
+
+hr
+
+# Downloads
+
+echo "Downloading ANTIGEN\n"
+
+curl -L git.io/antigen > "$PWD/antigen.zsh"
+echo "...done"
+
+hr
+
+echo "Downloaing and installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "...done"
