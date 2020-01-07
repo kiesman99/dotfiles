@@ -11,7 +11,7 @@
 ## variables
 
 ## collect dotfiles, that neet to be saved here
-files="zshrc vim vimrc antigenrc zsh_plugins.txt aliases.sh p10k.zsh exports.sh";
+files="zshrc vim vimrc zsh_plugins.txt aliases.sh p10k.zsh exports.sh";
 ##
 
 dir=~/dotfiles
@@ -58,3 +58,8 @@ echo "...done"
 echo "Downloaing and installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "...done"
+
+echo "Download and install nerdfonts"
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+echo "done..."
