@@ -25,8 +25,12 @@ Plug 'ekalinin/Dockerfile.vim'
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-Plug 'dracula/vim'
-
+" Plug 'dracula/vim'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
 
 " Syntax Highlighting Plugins
 
@@ -39,7 +43,8 @@ call plug#end()
 
 " THEMES
 " Enable Colorscheme
-colorscheme dracula
+" colorscheme dracula
+colorscheme ayu
 
 " Custom Settings
 set relativenumber  " Set relative line Numbers

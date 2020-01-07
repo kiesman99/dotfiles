@@ -1,11 +1,17 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:/Users/justinvietz/sdks/flutter/bin:$Home/bin:/usr/local/bin"
+# insert exports
+source ~/.exports.sh
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# insert aliases
+source ~/.aliases.sh
 
+# load zsh
 source $ZSH/oh-my-zsh.sh
+
+# load powerlevel10k
+source ~/.p10k.zsh
+
+
+
 
 ## PLUGIN CONFIG
 
@@ -13,8 +19,17 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey '^ ' autosuggest-accept
 
-# ANTIGEN
-source ~/dotfiles/antigen.zsh
+# ANTIBODY
+source <(antibody init)
+antibody bundle < ~/.zsh_plugins.txt
 
-# load antigenrc
-antigen init ~/.antigenrc
+anim() {
+	if (gsettings get org.gnome.desktop.interface enable-animations) then
+		echo 'Turning off animantions.';
+		gsettings set org.gnome.desktop.interface enable-animations false 
+	else
+		echo 'Turning on animations.';
+		gsettings set org.gnome.desktop.interface enable-animations true
+	fi
+}
+

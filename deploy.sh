@@ -1,24 +1,24 @@
 # -----------------------------
-function hr {
-    #echo "\n\n"
-    #echo "-----------------";
-    #echo "\n\n";
-    echo ""
-}
+# function hr {
+#    #echo "\n\n";
+#    #echo "-----------------";
+#    #echo "\n\n";
+#    echo "";
+#}
 # -----------------------------
 
 
 ## variables
 
 ## collect dotfiles, that neet to be saved here
-files="zshrc vim vimrc antigenrc";
+files="zshrc vim vimrc antigenrc zsh_plugins.txt aliases.sh p10k.zsh exports.sh";
 ##
 
 dir=~/dotfiles
 backuptDir=~/dotfiles_old
 
 echo "deploy.sh";
-hr
+# hr
 
 echo "Following files will be deployed:\n"
 
@@ -26,7 +26,7 @@ echo "Following files will be deployed:\n"
 for file in $files; do
 echo $file;
 done
-hr
+# hr
 
 echo "Making Backup of old dotfiles in $backupDir"
 mkdir -p $backuptDir
@@ -35,7 +35,7 @@ mv ~/.$file ~/dotfiles_old/
 done
 echo "...done"
 
-hr
+# hr
 
 echo "Make Symbolic from $dir to '~'"
 
@@ -44,16 +44,16 @@ ln -s $dir/$file ~/.$file
 done
 echo "...done"
 
-hr
+# hr
 
 # Downloads
 
-echo "Downloading ANTIGEN\n"
-
-curl -L git.io/antigen > "$PWD/antigen.zsh"
+echo "Downloading ANTIBODY\n"
+# curl -L git.io/antigen > "$PWD/antigen.zsh"
+curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 echo "...done"
 
-hr
+# hr
 
 echo "Downloaing and installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
