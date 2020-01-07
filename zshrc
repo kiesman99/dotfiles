@@ -10,7 +10,8 @@ source $ZSH/oh-my-zsh.sh
 # load powerlevel10k
 source ~/.p10k.zsh
 
-
+# enable colorls tab completion
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 
 ## PLUGIN CONFIG
