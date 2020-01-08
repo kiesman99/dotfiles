@@ -11,7 +11,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree' " A File Explorer
 
-Plug 'ctrlpvim/ctrlp.vim' " A fuzzy file finder
+Plug 'ryanoasis/vim-devicons' " Get some nice icons into NERDTree
+
+Plug 'scrooloose/nerdcommenter' " Commenting Lines is easy
 
 Plug 'tpope/vim-surround' " Extensive Plugin to add and edit surroundings
 
@@ -19,8 +21,14 @@ Plug 'tpope/vim-fugitive' " A git wrapper
 
 Plug 'itchyny/lightline.vim' " Status Bar
 
+Plug 'ctrlpvim/ctrlp.vim' " A fuzzy finder
+
+Plug 'airblade/vim-gitgutter' " A git integration to show which line has been edited
+
 " Plugin for docker syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
@@ -40,6 +48,13 @@ Plug 'PProvost/vim-ps1'
 call plug#end()
 " END PLUGINS
 
+" autostart NERDTree
+" autocmd vimenter * NERDTree
+
+" custom keybindings
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 " THEMES
 " Enable Colorscheme
