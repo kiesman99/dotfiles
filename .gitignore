@@ -1,4 +1,7 @@
 antigen.zsh
+vim/**
 .DS_Store
-
+yarn.lock
 oh-my-zsh
+
+node_modules
