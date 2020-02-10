@@ -25,10 +25,12 @@ Plug 'ctrlpvim/ctrlp.vim' " A fuzzy finder
 
 Plug 'airblade/vim-gitgutter' " A git integration to show which line has been edited
 
+Plug 'liuchengxu/vista.vim' " A helpul sidebar
+
 " Plugin for docker syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
@@ -41,19 +43,44 @@ let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 
 " Syntax Highlighting Plugins
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 
-Plug 'vim-scripts/Dart'
 Plug 'PProvost/vim-ps1'
 
 call plug#end()
 " END PLUGINS
 
-" autostart NERDTree
-" autocmd vimenter * NERDTree
+" Vista configuration
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc 
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
+" LIGHTLINE Config
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'method' ] ]
+      \ },
+      \ 'component_function': {
+      \   'method': 'NearestMethodOrFunction'
+      \ },
+      \ }
 
 " custom keybindings
 
 " NERDTree
+" autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " THEMES
