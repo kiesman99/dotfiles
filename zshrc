@@ -1,8 +1,6 @@
 # insert exports
 source ~/.exports.sh
 
-# insert aliases
-source ~/.aliases.sh
 
 # load zsh
 source $ZSH/oh-my-zsh.sh
@@ -34,3 +32,5 @@ anim() {
 	fi
 }
 
+# insert aliases
+source ~/.aliases.sh
