@@ -15,8 +15,11 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 ## PLUGIN CONFIG
 
 ## SUGGESTIONS
-
+plugins=(
+	git
+)
 bindkey '^ ' autosuggest-accept
+
 
 # ANTIBODY
 source <(antibody init)
@@ -34,3 +37,10 @@ anim() {
 
 # insert aliases
 source ~/.aliases.sh
+
+# vim keybinding for zsh
+bindkey -v
+export KEYTIMEOUT=1
+bindkey '^r' history-incremental-search-backward
+
+source /home/kiesman/.config/broot/launcher/bash/br

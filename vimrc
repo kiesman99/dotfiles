@@ -17,7 +17,7 @@ Plug 'scrooloose/nerdcommenter' " Commenting Lines is easy
 
 Plug 'tpope/vim-surround' " Extensive Plugin to add and edit surroundings
 
-Plug 'tpope/vim-fugitive' " A git wrapper
+" Plug 'tpope/vim-fugitive' " A git wrapper
 
 Plug 'itchyny/lightline.vim' " Status Bar
 
@@ -30,7 +30,10 @@ Plug 'liuchengxu/vista.vim' " A helpul sidebar
 " Plugin for docker syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin for viewing diff
+Plug 'sjl/splice.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
@@ -44,10 +47,6 @@ let ayucolor="mirage" " for mirage version of theme
 
 " Syntax Highlighting Plugins
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
-
-Plug 'PProvost/vim-ps1'
 
 call plug#end()
 " END PLUGINS

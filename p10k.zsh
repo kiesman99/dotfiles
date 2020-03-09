@@ -39,6 +39,7 @@
       os_icon                 # os identifier
       dir                     # current directory
       vcs                     # git status
+      vi_mode
       # prompt_char           # prompt symbol
   )
 
