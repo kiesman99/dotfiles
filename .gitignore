@@ -1,5 +1,5 @@
 antigen.zsh
-vim/**
+vim/plugged
 .DS_Store
 yarn.lock
 oh-my-zsh
