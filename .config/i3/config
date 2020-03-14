@@ -10,17 +10,18 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # set display resolution
-# exec_always ~/.config/i3/i3-display-go.sh &
-exec_always ~/.config/i3/xrandr-conf.sh &
+exec_always ~/.config/i3/i3-display-go.sh &
+# exec_always ~/.config/i3/xrandr-conf.sh &
 
 # start polybar
-exec_always ~/.config/polybar/launch.sh &
+# exec_always ~/.config/polybar/launch.sh &
 
 # set wallpaper
-exec_always feh --bg-fill /usr/share/backgrounds/pop/nick-nazzaro-ice-cave.png
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec xsetroot -solid "#3c526a"
 
 # start compton
-# exec_always compton
+exec_always --no-startup-id (nohup compton --config ~/.config/compton/compton.conf &)
 
 set $mod Mod4
 
@@ -39,6 +40,9 @@ font pango:monospace 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Enable key combination to lock screen
+bindsym $mod+Escape exec ~/.config/i3/lock.sh
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -46,6 +50,16 @@ exec --no-startup-id nm-applet
 new_window 1pixel
 gaps inner 15
 gaps outer 20
+
+default_border pixel 3
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #ffcc66
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
 # smart_gaps on
 # smart_borders on
 # Use pactl to adjust volume in PulseAudio.
@@ -62,7 +76,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start rofi
-bindsym $mod+space exec rofi -show drun -show-icons -theme /usr/share/rofi/themes/Paper.rasi 
+bindsym $mod+space exec rofi -show drun -show-icons -theme ~/.config/rofi/nord_rofi.rasi 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -197,6 +211,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#}
+# bar {
+	# position top
+        # status_command i3status
+# }
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
