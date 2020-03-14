@@ -39,7 +39,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:LanguageClient_autoStart = 1
 
 " Plug 'dracula/vim'
-Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'arcticicestudio/nord-vim'
 set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
@@ -85,7 +85,7 @@ map <C-n> :NERDTreeToggle<CR>
 " THEMES
 " Enable Colorscheme
 " colorscheme dracula
-colorscheme ayu
+colorscheme nord
 
 " Custom Settings
 set relativenumber  " Set relative line Numbers
