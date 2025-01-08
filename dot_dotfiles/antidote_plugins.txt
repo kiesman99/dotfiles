@@ -1,0 +1,4 @@
+ohmyzsh/ohmyzsh path:plugins/kubectl
+ohmyzsh/ohmyzsh path:plugins/git
+wfxr/forgit
+

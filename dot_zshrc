@@ -1,0 +1,5 @@
+# Dont configure here, do it in init.zsh
+source ~/.dotfiles/init.zsh
+
+
+
