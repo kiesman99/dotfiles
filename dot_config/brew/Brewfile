@@ -1,2 +1,4 @@
 brew "lsd"
 brew "antidote"
+brew "atuin"
+brew "starship"
