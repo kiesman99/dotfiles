@@ -11,6 +11,7 @@ source ~/.dotfiles/functions.zsh
 
 # additional config
 source ~/.dotfiles/plugins/pnpm.zsh
+source ~/.dotfiles/plugins/vscode.zsh
 
 # Plugin manager
 source ~/.dotfiles/plugins/antidote.zsh
