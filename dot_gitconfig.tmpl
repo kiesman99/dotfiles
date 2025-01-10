@@ -1,0 +1,13 @@
+[user]
+	name = Justin Vietz
+	{{ if eq .chezmoi.hostname "WORK" }}
+	email = justin.vietz@eventim.de
+	{{ else }}
+	email = vietzi99@gmail.com
+	{{ end }}
+[rerere]
+	enabled = true
+[core]
+	autocrlf = input
+[push]
+	autoSetupRemote = true
